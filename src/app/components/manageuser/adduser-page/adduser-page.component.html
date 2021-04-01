@@ -1,0 +1,69 @@
+<!--<form #la="ngForm" (ngSubmit)="enrolldatatosql()" >
+    <input type="text" name = "userfirstname" [(ngModel)] = "addusermodel.UserFirstName"><br>
+    <input type="text" name = "userlastname" [(ngModel)] = "addusermodel.UserLastName"><br>
+    <input type="date" name = "userdob" [(ngModel)] = "addusermodel.UserDOB"><br>
+    <input type="email" name = "useremail" [(ngModel)] = "addusermodel.UserEmail"><br>
+    <input type="number" name = "usermoblie" [(ngModel)] = "addusermodel.UserMobileNumber"><br>
+    <input type="text" name = "useraddress" [(ngModel)] = "addusermodel.UserAddress"><br>
+    <input type="text" name = "userstate" [(ngModel)] = "addusermodel.UserState"><br>
+    <input type="text" name = "usercity" [(ngModel)] = "addusermodel.UserCity"><br>
+    <input type="text" name = "userpostal" [(ngModel)] = "addusermodel.UserPostalCode"><br>
+    <input type="text" name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"><br>
+    <input type="file" name = "userphoto" [(ngModel)] = "addusermodel.UserUploadPhoto"><br>
+    <input type="file" name = "Userkyc" [(ngModel)] = "addusermodel.UserKycUpload"><br> 
+    
+    <button type="submit" >Submit</button>
+</form>-->
+
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Register</h3>
+          </div>
+          <div class="card-body">
+            <form class="form" #adduserform='ngForm' (ngSubmit)="enrolldatatosql()" >
+                <label>First Name</label>
+                <input class="form-control" type="text" name = "userfirstname" [(ngModel)] = "addusermodel.UserFirstName"><br>
+                <label>Last Name</label>
+                <input class="form-control" type="text" name = "userlastname" [(ngModel)] = "addusermodel.UserLastName"><br>
+                <label>Date of brith</label>
+                <input class="form-control" type="date" name = "userdob" [(ngModel)] = "addusermodel.UserDOB"><br>
+                <label>Email</label>
+                <input class="form-control" type="email" name = "useremail" [(ngModel)] = "addusermodel.UserEmail" ><br>
+                <label>password</label>
+                <input class="form-control" type="text" name = "password" [(ngModel)] = "addusermodel.UserPassword"><br>
+        
+                <label>Mobile Number</label>
+                <input class="form-control" type="number" name = "usermoblie" [(ngModel)] = "addusermodel.UserMobileNumber"><br>
+                <label>Address</label>
+                <input class="form-control" type="text" name = "useraddress" [(ngModel)] = "addusermodel.UserAddress"><br>
+                <label>State</label>
+                <input class="form-control" type="text" name = "userstate" [(ngModel)] = "addusermodel.UserState"><br>
+                <label>City</label>
+                <input class="form-control" type="text" name = "usercity" [(ngModel)] = "addusermodel.UserCity"><br>
+                <label>Postal</label>
+                <input class="form-control" type="text" name = "userpostal" [(ngModel)] = "addusermodel.UserPostalCode"><br>
+                <label>User Group</label>
+                <input class="form-control" type="text" name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"><br>
+                <label>Profile Photo</label>
+                <input class="form-control" type="file" name = "userphoto" [(ngModel)] = "addusermodel.UserUploadPhoto"><br>
+                <label>KYC Document</label>
+                <input class="form-control"  type="file" name = "Userkyc" [(ngModel)] = "addusermodel.UserKycUpload"><br> 
+             
+              <button type="submit"  class="btn btn-dark float-right">Register</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

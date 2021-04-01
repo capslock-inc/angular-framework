@@ -1,0 +1,53 @@
+<!--<div class="container">
+<ul class = 'list-group list-group-flush'>
+    <li class="list-group-item" *ngFor="let data of user">{{data.UserFirstName}}  {{data.UserLastName}}
+        <div class="row mt-4">
+       <div class="col-md-4 mb-3" >
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{data.UserFirstName}}</div>
+            <div class="card-body">
+              <h5 class="card-title">Dark card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            </div>
+            </div>
+          </div>
+    </li>
+</ul>
+</div>-->
+
+<div class="row mt-4">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Date of brith</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Status</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let data of user">
+        <th scope="row">{{data.UserId}}</th>
+        <td>{{data.UserFirstName}}</td>
+        <td>{{data.UserLastName}}</td>
+        <td>{{data.UserDOB}}</td>
+        <td>{{data.UserEmail}}</td>
+        <td>{{data.UserMobileNumber}}</td>
+        <td>{{data.UserStatus}}</td>
+        <td><b><img src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"/></b></td>
+        <td><b><img src="https://img.icons8.com/material/24/000000/delete-forever--v1.png"/></b></td>
+    
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+
