@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthguardGuard } from './authguard.guard';
 import { LandingPageComponent } from './components/basic/landing-page/landing-page.component';
 import { PagenotfoundPageComponent } from './components/basic/pagenotfound-page/pagenotfound-page.component';
 import { CmsviewPageComponent } from './components/cms/cmsview-page/cmsview-page.component';
@@ -12,9 +13,9 @@ const routes: Routes = [
   {path : '', redirectTo:'home', pathMatch:'full'},
   {path : 'home', component: LandingPageComponent},
   {path : 'login', component: LoginPageComponent},
-  {path : 'viewuser', component: ViewuserPageComponent},
+  {path : 'viewuser', component: ViewuserPageComponent, canActivate: [AuthguardGuard]},
   {path : 'adduser', component: AdduserPageComponent},
-  {path : 'cmsview', component : CmsviewPageComponent},
+  {path : 'cmsview', component : CmsviewPageComponent, canActivate: [AuthguardGuard]},
   {path : 'surveyview', component : ViewquesPageComponent},
   {path : '**', component: PagenotfoundPageComponent}
 ];

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'open wave';
-  constructor(private route:Router){
+  constructor(private route:Router,public service: UserService){
 
   }
   
@@ -20,6 +21,12 @@ export class AppComponent {
   //from navbar to adduser page navigation
   adduser_navigation(){
     this.route.navigate(['/adduser'])
+  }
+
+  //logout
+  logout(){
+    localStorage.clear()
+    this.route.navigate(['/login'])
   }
   
 }

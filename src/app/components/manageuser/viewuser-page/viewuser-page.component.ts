@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { adduser } from 'src/app/models/addusermodel';
 import { UserService } from 'src/app/services/user.service';
 
@@ -15,11 +16,17 @@ export class ViewuserPageComponent implements OnInit {
   user = []
   
 
-  constructor(private service : UserService) { }
+  constructor(private service : UserService, private route: Router) { }
   ngOnInit(): void {
     this.service.viewuserdata().subscribe(
       data => this.user = data,
-      err => console.log(err)
+      err =>{
+        if (err instanceof HttpErrorResponse){
+          if(err.status === 401) {
+            this.route.navigate(['/login'])
+          }
+        }
+      } 
     )
     console.log(this.user)
   }

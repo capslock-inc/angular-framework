@@ -26,11 +26,25 @@ export class UserService {
   adduserdata(userdata: adduser){
     return this.http.post<any>(this._addurl,userdata);
   }
-
+  
+  // to login
   logindata(logindata: loginusermodel){
     return this.http.post<any>(this._loginurl,logindata)
   }
 
+  //to check loggeed in or not
+  loggedInOrNot(){
+    return !!localStorage.getItem("token"); // !!-return boolean
+  }
+
+  // token from api
+  tokenfromlocalstroage(){
+    return localStorage.getItem("token");
+  }
+
+  adminLoggedInOrNot(){
+    return !!localStorage.getItem("admin");
+  }
 
 
 

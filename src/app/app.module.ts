@@ -4,8 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { AuthguardGuard } from './authguard.guard';
+import { TokensService } from './services/tokens.service'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import { UserService } from './services/user.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService,AuthguardGuard,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokensService,
+    multi: true
+
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

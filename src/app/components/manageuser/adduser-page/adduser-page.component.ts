@@ -24,7 +24,10 @@ export class AdduserPageComponent implements OnInit {
   enrolldatatosql(){
     console.log(this.addusermodel)
     this.service.adduserdata(this.addusermodel).subscribe(
-      (data) => console.log("data posted",data),
+      (data) => {
+        console.log("data posted",data)
+        
+      },
       (error) => console.log("error",error)
     )
   
