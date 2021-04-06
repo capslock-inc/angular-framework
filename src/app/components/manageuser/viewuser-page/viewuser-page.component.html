@@ -17,6 +17,9 @@
 </div>-->
 
 <div class="row mt-4">
+<nav class="navbar ">
+  <input class="form-control" type="search" placeholder="search by firstname" [(ngModel)] = "Firstname" (ngModelChange) = "onSearch()" >
+</nav>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -30,11 +33,11 @@
         <th scope="col"></th>
         <th scope="col"></th>
         
-      </tr>
     </thead>
     <tbody>
-      <tr *ngFor = "let data of user">
+      <tr (click)="onSelect(data)" *ngFor = "let data of user">
         <th scope="row">{{data.UserId}}</th>
+        
         <td>{{data.UserFirstName}}</td>
         <td>{{data.UserLastName}}</td>
         <td>{{data.UserDOB}}</td>

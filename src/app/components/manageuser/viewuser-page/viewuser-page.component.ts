@@ -13,7 +13,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ViewuserPageComponent implements OnInit {
   //array to store response data
-  user = []
+  user = [];
+  public Firstname:string | undefined;
   
 
   constructor(private service : UserService, private route: Router) { }
@@ -28,17 +29,13 @@ export class ViewuserPageComponent implements OnInit {
         }
       } 
     )
-    console.log(this.user)
   }
-
-
-  
-
-  //searching in view page
-  //seacrh_user(){
-  //  this.model = this.model.filter(res => {
-  //  return res.firstname.tolocalelowercase().match(this,firstname.tolocalelowercase())
-  //})
-  //}
+ 
+ // searching in view page
+  onSearch(){
+   this.user = this.user.filter(res => {
+   return res.Firstname.toLocaleLowerCase().match(this.Firstname.toLocaleLowerCase())
+  })
+  }
 
 }

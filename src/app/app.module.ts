@@ -7,12 +7,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { AuthguardGuard } from './authguard.guard';
-import { TokensService } from './services/tokens.service'
+import { TokensService } from './services/tokens.service';
+import { CmsdetailsComponent } from './components/details/cmsdetails/cmsdetails.component';
+import { SurveydetailsComponent } from './components/details/surveydetails/surveydetails.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponent
+    routingComponent,
+    CmsdetailsComponent,
+    SurveydetailsComponent,
   ],
   imports: [
     BrowserModule,
