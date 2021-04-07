@@ -1,13 +1,18 @@
-<div class="card mt-5" style="height: 600px;">
+<div class="card mt-5" >
     <div class="card-body">
-      <h5 class="card-title">{{userdetail.}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title"><p>{{userdetail.UserFirstName}}  {{userdetail.UserLastName}}</p></h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{userdetail.UserEmail}}</h6><hr>
+      <p class="card-text">Group: {{userdetail.UserGroupAssign}}</p>
+      <p class="card-text">Moblieno: {{userdetail.UserMobileNumber}}</p>
+      <p class="card-text">Address: {{userdetail.UserAddress}},{{userdetail.UserCity}},{{userdetail.UserState}}-{{userdetail.UserPostalCode}}</p>
       
     </div>
     <div class="card-footer" >
-        <img  src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"/>
+        <img (click)="edit()" src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"/>
         <img (click)="delete()" src="https://img.icons8.com/material/24/000000/delete-forever--v1.png" />
-        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-dark" type="button" (click)="goback()">back
+          </button>
+        </div>
+      </div>
     </div>
-  </div>

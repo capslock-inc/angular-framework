@@ -10,6 +10,7 @@ import { AuthguardGuard } from './authguard.guard';
 import { TokensService } from './services/tokens.service';
 import { CmsdetailsComponent } from './components/details/cmsdetails/cmsdetails.component';
 import { SurveydetailsComponent } from './components/details/surveydetails/surveydetails.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SurveydetailsComponent } from './components/details/surveydetails/surve
     routingComponent,
     CmsdetailsComponent,
     SurveydetailsComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

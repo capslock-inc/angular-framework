@@ -1,0 +1,145 @@
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Register</h3>
+          </div>
+          <div class="card-body">
+            <form class="form" #adduserform='ngForm' (ngSubmit)="enrolldatatosql()" >
+                <label>First Name</label>
+                <input class="form-control" type="text" name = "userfirstname" [(ngModel)] = "addusermodel.UserFirstName"
+                #firstname = "ngModel" [class.is-invalid]="firstname.invalid && firstname.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="firstname.errors && (firstname.valid || firstname.touched)">
+                  <small class="text-danger" *ngIf = "firstname.errors.required">firstname is required </small>
+                </div><br>
+                
+
+
+                <label>Last Name</label>
+                <input class="form-control" type="text" name = "userlastname" [(ngModel)] = "addusermodel.UserLastName"
+                #lastname = "ngModel" [class.is-invalid]="lastname.invalid && lastname.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="lastname.errors && (lastname.valid || lastname.touched)">
+                  <small class="text-danger" *ngIf = "lastname.errors.required">lastname is required </small>
+                </div><br>
+
+
+                <label>Date of brith</label>
+                <input class="form-control" type="date" name = "userdob" [(ngModel)] = "addusermodel.UserDOB"
+                #dob = "ngModel" [class.is-invalid]="dob.invalid && dob.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="dob.errors && (dob.valid || dob.touched)">
+                  <small class="text-danger" *ngIf = "dob.errors.required">date of birth is required </small>
+                </div><br>
+
+
+                <label>Email</label>
+                <input class="form-control" type="email" name = "useremail" [(ngModel)] = "addusermodel.UserEmail" 
+                #email = "ngModel" [class.is-invalid]="email.invalid && email.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="email.errors && (email.valid || email.touched)">
+                  <small class="text-danger" *ngIf = "email.errors.required">email is required </small>
+                </div><br>
+
+
+                <label>password</label>
+                <input class="form-control" type="text" pattern=".{8,}"  [(ngModel)] = "addusermodel.UserPassword" 
+                name = "password" [class.is-invalid]="pwd.invalid && pwd.touched" #pwd="ngModel"  required>
+                <!-- errormessage -->
+                <div *ngIf="pwd.errors && (pwd.valid || pwd.touched)">
+                  <small class="text-danger" *ngIf = "pwd.errors.required">password is required </small>
+                  <small class="text-danger" *ngIf = "pwd.errors.pattern">password must be atleast eight character</small>
+                </div><br>
+
+        
+                <label>Mobile Number</label>
+                <input class="form-control" pattern="^\d{10}$" type="tel" name = "usermoblie" [(ngModel)] = "addusermodel.UserMobileNumber"
+                #mob = "ngModel" [class.is-invalid]="mob.invalid && mob.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="mob.errors && (mob.valid || mob.touched)">
+                  <small class="text-danger" *ngIf = "mob.errors.required">moblie number is required </small>
+                  <small class="text-danger" *ngIf = "mob.errors.pattern">moblie should be ten number</small>
+                </div><br>
+
+
+                <label>Address</label>
+                <input class="form-control" type="text" name = "useraddress" [(ngModel)] = "addusermodel.UserAddress"
+                #ad = "ngModel" [class.is-invalid]="ad.invalid && ad.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="ad.errors && (ad.valid || ad.touched)">
+                  <small class="text-danger" *ngIf = "ad.errors.required">address is required </small>
+                </div><br>
+
+
+                <label>State</label>
+                <input class="form-control" type="text" name = "userstate" [(ngModel)] = "addusermodel.UserState"
+                #state = "ngModel" [class.is-invalid]="state.invalid && state.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="state.errors && (state.valid || state.touched)">
+                  <small class="text-danger" *ngIf = "state.errors.required">state is required </small>
+                </div><br>
+
+
+                <label>City</label>
+                <input class="form-control" type="text" name = "usercity" [(ngModel)] = "addusermodel.UserCity"
+                #city = "ngModel" [class.is-invalid]="city.invalid && city.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="city.errors && (city.valid || city.touched)">
+                  <small class="text-danger" *ngIf = "city.errors.required">city is required </small>
+                </div><br>
+
+
+                <label>Postal</label>
+                <input class="form-control"  pattern="^\d{6}$" type="tel" name = "userpostal" [(ngModel)] = "addusermodel.UserPostalCode"
+                #postal = "ngModel" [class.is-invalid]="postal.invalid && postal.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="postal.errors && (postal.valid || postal.touched)">
+                  <small class="text-danger" *ngIf = "postal.errors.required">postal is required </small>
+                  <small class="text-danger" *ngIf = "postal.errors.pattern">postal should be six number</small>
+                </div><br>
+
+
+                <label>User Group</label>
+                <input class="form-control" type="text" name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"
+                #group = "ngModel" [class.is-invalid]="group.invalid && group.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="group.errors && (group.valid || group.touched)">
+                  <small class="text-danger" *ngIf = "group.errors.required">group is required </small>
+                </div><br>
+
+
+                <label>Profile Picture</label>
+                <input class="form-control" type="file" name = "userphoto" [(ngModel)] = "addusermodel.UserUploadPhoto"
+                #profile = "ngModel" [class.is-invalid]="profile.invalid && profile.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="profile.errors && (profile.valid || profile.touched)">
+                  <small class="text-danger" *ngIf = "profile.errors.required">profile picture is required </small>
+                </div><br>
+
+
+                <label>KYC Document</label>
+                <input class="form-control"  type="file" name = "Userkyc" [(ngModel)] = "addusermodel.UserKycUpload"
+                #kyc = "ngModel" [class.is-invalid]="kyc.invalid && kyc.touched" required>
+                <!-- errormessage -->
+                <div *ngIf="kyc.errors && (kyc.valid || kyc.touched)">
+                  <small class="text-danger" *ngIf = "kyc.errors.required">kyc document is required </small>
+                </div><br>
+              
+             
+              <button [disabled]="adduserform.form.invalid" type="submit"  class="btn btn-dark float-right">Register</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

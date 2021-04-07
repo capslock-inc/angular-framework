@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http"
 import { adduser } from 'src/app/models/addusermodel';
 import { UserService } from 'src/app/services/user.service';
 import { loginusermodel } from 'src/app/models/loginusermodel';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +18,7 @@ export class AdduserPageComponent implements OnInit {
     null,null,null,true
     );
 
-  constructor(private service: UserService,private http: HttpClient) { }
+  constructor(private service: UserService,private http: HttpClient, private route: Router) { }
   ngOnInit(): void {
   }
 
@@ -25,7 +26,9 @@ export class AdduserPageComponent implements OnInit {
     console.log(this.addusermodel)
     this.service.adduserdata(this.addusermodel).subscribe(
       (data) => {
-        console.log("data posted",data)
+        console.log("data posted",data);
+        this.route.navigate(['/login'])
+        
         
       },
       (error) => console.log("error",error)

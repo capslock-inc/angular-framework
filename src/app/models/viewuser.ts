@@ -1,15 +1,17 @@
-export interface userdata{
-      UserFirstName:string | undefined,
-          UserLastName:string | undefined,
-          UserDOB:Date | undefined,
-          UserEmail:string | undefined,
-          UserMobileNumber:number | undefined,
-          UserAddress:string | undefined,
-          UserState:string | undefined,
-          UserCity:string | undefined,
-          UserPostalCode:string | undefined,
-          UserGroupAssign:string | undefined,
-          UserUploadPhoto:ImageBitmap | undefined,
-          UserKycUpload:ImageBitmap | undefined,
-          UserStatus:boolean | undefined
+export class userdetaildata{
+    constructor(
+         public UserId:number | undefined,
+         public UserFirstName:string | undefined,
+         public UserLastName:string | undefined,
+         public UserDOB:Date | undefined,
+         public UserEmail:string | undefined,
+         public UserMobileNumber:number | undefined,
+         public UserAddress:string | undefined,
+         public UserState:string | undefined,
+         public UserCity:string | undefined,
+         public UserPostalCode:string | undefined,
+         public UserGroupAssign:string | undefined,
+         public UserUploadPhoto:ImageBitmap | undefined,
+         public UserKycUpload:ImageBitmap | undefined,
+         public UserStatus:boolean | undefined){}
 }

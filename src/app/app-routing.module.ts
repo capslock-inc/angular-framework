@@ -7,6 +7,7 @@ import { PagenotfoundPageComponent } from './components/basic/pagenotfound-page/
 import { AddcmspagePageComponent } from './components/cms/addcmspage-page/addcmspage-page.component';
 import { CmsviewPageComponent } from './components/cms/cmsview-page/cmsview-page.component';
 import { UserdetailsComponent } from './components/details/userdetails/userdetails.component';
+import { EditComponent } from './components/edit/edit.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AdduserPageComponent } from './components/manageuser/adduser-page/adduser-page.component';
 import { ViewuserPageComponent } from './components/manageuser/viewuser-page/viewuser-page.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path : "addgrp", component:AddusergroupPageComponent, canActivate: [AdminauthGuard]},
   {path : "viewgrp", component:ViewusergroupPageComponent, canActivate: [AdminauthGuard]},
   {path : "addsurvey", component:AddquesPageComponent, canActivate: [AdminauthGuard]},
+  {path : "edituser", component:EditComponent, canActivate: [AdminauthGuard]},
   {path : 'surveyview', component : ViewquesPageComponent, canActivate: [AuthguardGuard] },
   {path : '**', component: PagenotfoundPageComponent}
 ];
@@ -48,6 +50,7 @@ export const routingComponent =[
   AddquesPageComponent,
   AddusergroupPageComponent,
   ViewusergroupPageComponent,
-  UserdetailsComponent
+  UserdetailsComponent,
+  EditComponent
 ];
 

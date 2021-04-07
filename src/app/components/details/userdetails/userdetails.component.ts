@@ -1,7 +1,8 @@
-import { jsDocComment } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,ParamMap, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { userdetaildata } from '../../../models/viewuser'
 
 @Component({
   selector: 'app-userdetails',
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserdetailsComponent implements OnInit {
 
   public selectedid;
-  public userdetail = [];
+  public userdetail:userdetaildata;
 
   constructor(private route: ActivatedRoute, private router: Router, private service : UserService ) { }
 
@@ -31,6 +32,7 @@ export class UserdetailsComponent implements OnInit {
     this.service.selectedId(newid).subscribe(
       (data) =>{
         this.userdetail = data
+        this.service.editModelData = data
         console.log(this.userdetail)
       } ,
       (err) => {
@@ -39,6 +41,14 @@ export class UserdetailsComponent implements OnInit {
     )
     
   }
-delete(){}
+delete(){
+
+}
+edit(){
+  this.router.navigate(['/edituser'])
+}
+goback(){
+  this.router.navigate(['/viewuser'])
+}
 
 }

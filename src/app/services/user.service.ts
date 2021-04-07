@@ -9,6 +9,9 @@ import { loginusermodel } from '../models/loginusermodel';
 })
 export class UserService {
 
+  public editModelData:adduser;
+    
+
   //urls
   _addurl = "http://localhost:5000/adduser/adduserdata";
   _viewurl = "http://localhost:5000/viewuser/viewuserdata";
