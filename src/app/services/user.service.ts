@@ -12,7 +12,8 @@ export class UserService {
   //urls
   _addurl = "http://localhost:5000/adduser/adduserdata";
   _viewurl = "http://localhost:5000/viewuser/viewuserdata";
-  _loginurl = "http://localhost:5000/login/logindata" 
+  _loginurl = "http://localhost:5000/login/logindata";
+  _userdetailurl = "http://localhost:5000/viewuser/getdetail" 
 
   //injection
   constructor(private http: HttpClient) { }
@@ -44,6 +45,10 @@ export class UserService {
 
   adminLoggedInOrNot(){
     return !!localStorage.getItem("admin");
+  }
+
+  selectedId(num){
+    return this.http.post<any>(this._userdetailurl,num);
   }
 
 

@@ -1,5 +1,7 @@
+import { jsDocComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,ParamMap, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-userdetails',
@@ -8,17 +10,35 @@ import { ActivatedRoute,ParamMap, Router } from '@angular/router';
 })
 export class UserdetailsComponent implements OnInit {
 
-  public selectedid:number | undefined;
+  public selectedid;
+  public userdetail = [];
 
-  constructor(private route: ActivatedRoute, private router: Router ) { }
+  constructor(private route: ActivatedRoute, private router: Router, private service : UserService ) { }
 
   ngOnInit(): void {
     // let id = parseInt(this.route.snapshot.paramMap.get('id'));
     // this.selectedid = id;
     this.route.paramMap.subscribe((params: ParamMap) =>{
       let id = parseInt(params.get("id"));
-      this.selectedid=id;
+      this.selectedid=id; 
+
     })
+    let newid = {
+      "UserId": Number
+    }
+    newid.UserId = this.selectedid
+    console.log(newid)
+    this.service.selectedId(newid).subscribe(
+      (data) =>{
+        this.userdetail = data
+        console.log(this.userdetail)
+      } ,
+      (err) => {
+        console.log(err);
+      }
+    )
+    
   }
+delete(){}
 
 }

@@ -1,10 +1,8 @@
 export class quesmodel {
     constructor(
-        public inputtype:string | undefined,
-        public questiontitle:string | undefined,
-        public possibleanser:string | undefined,
-        public correctanswer:string | undefined,
-        public sortorder:string | undefined
+        public InputType:string | undefined,
+        public SurveyQuestion:string | undefined,
+        public CorrectAnswer:string | undefined
     ) {
         
     }

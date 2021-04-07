@@ -33,9 +33,14 @@ export class ViewuserPageComponent implements OnInit {
  
  // searching in view page
   onSearch(){
+    if (this.Firstname == ""){
+      return this.ngOnInit();
+    }else{
    this.user = this.user.filter(res => {
-   return res.Firstname.toLocaleLowerCase().match(this.Firstname.toLocaleLowerCase())
-  })
+   return res.UserFirstName.toLocaleLowerCase().match(this.Firstname.toLocaleLowerCase())
+  })}
   }
-
+ onSelect(data){
+    this.route.navigate(['/viewuser',data.UserId])
+ }
 }
