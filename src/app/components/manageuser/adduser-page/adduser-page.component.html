@@ -122,8 +122,17 @@
 
 
                 <label>User Group</label>
-                <input class="form-control" type="text" name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"
+                <!-- <select class="form-select"  name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"
                 #group = "ngModel" [class.is-invalid]="group.invalid && group.touched" required>
+
+                <option *ngFor = "let data of grp" >{{grp.UserGroupTitle}}</option>
+              
+              </select> -->
+              <input class="form-control"  name = "usergroup" [(ngModel)] = "addusermodel.UserGroupAssign"
+              #group = "ngModel" [class.is-invalid]="group.invalid && group.touched" required>         
+            
+    
+
                 <!-- errormessage -->
                 <div *ngIf="group.errors && (group.valid || group.touched)">
                   <small class="text-danger" *ngIf = "group.errors.required">group is required </small>

@@ -11,6 +11,7 @@ import { TokensService } from './services/tokens.service';
 import { CmsdetailsComponent } from './components/details/cmsdetails/cmsdetails.component';
 import { SurveydetailsComponent } from './components/details/surveydetails/surveydetails.component';
 import { EditComponent } from './components/edit/edit.component';
+import { GroupdetailComponent } from './components/detail/groupdetail/groupdetail.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { EditComponent } from './components/edit/edit.component';
     CmsdetailsComponent,
     SurveydetailsComponent,
     EditComponent,
+    GroupdetailComponent,
   ],
   imports: [
     BrowserModule,

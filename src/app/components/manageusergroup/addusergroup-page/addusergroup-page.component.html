@@ -13,19 +13,20 @@
         <!-- form card login -->
         <div class="card shadow-lg p-3 mb-5 bg-body " style="border-radius:25pt;">
           <div class="card-body ">
+          
             <h3 class="mb-0 display-3">add user</h3>
           </div>
           <div class="card-body">
-            <form class="form" #add user form = "ngForm">
+            <form class="form" #adduserform = "ngForm" (ngSubmit)="enrolldatatosql()">
               <div class="form-group">
                 <!-- <label >Username</label> -->
-                <input type="text" class="form-control rounded" placeholder="Email" required>
+                <input type="text" name="grouptitle" class="form-control rounded" placeholder="Group Title" [(ngModel)]="grpdata.UserGroupName" required>
                 <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">email is required</small><br> -->
                 
               </div>
               <div class="form-group">
                 <!-- <label>Password</label> -->
-                <textarea placeholder="group description" class="form-control " required></textarea>
+                <textarea placeholder="group description" name="description" class="form-control "  [(ngModel)]="grpdata.UserGroupDescription" required></textarea>
                 <!-- <small class="text-danger d-none" [class.d-none]="pwd.valid || pwd.untouched">password is required</small> -->
               </div><br>
               <button  type="submit" class="btn btn-dark float-right">Login</button>

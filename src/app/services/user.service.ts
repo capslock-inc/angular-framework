@@ -16,8 +16,10 @@ export class UserService {
   _addurl = "http://localhost:5000/adduser/adduserdata";
   _viewurl = "http://localhost:5000/viewuser/viewuserdata";
   _loginurl = "http://localhost:5000/login/logindata";
-  _userdetailurl = "http://localhost:5000/viewuser/getdetail" 
-
+  _userdetailurl = "http://localhost:5000/viewuser/getdetail";
+  _editurl = "http://localhost:5000/adduser/edituser"
+  _deleteurl = "http://localhost:5000/adduser/deleteuser" 
+ 
   //injection
   constructor(private http: HttpClient) { }
 
@@ -52,6 +54,15 @@ export class UserService {
 
   selectedId(num){
     return this.http.post<any>(this._userdetailurl,num);
+  }
+
+  //edit
+  edituserdata(data){
+    return this.http.post<any>(this._editurl,data);
+  }
+
+  deleteuser(data){
+    return this.http.post<any>(this._deleteurl,data)
   }
 
 

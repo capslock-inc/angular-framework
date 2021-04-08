@@ -1,1 +1,24 @@
-<p>viewusergroup-page works!</p>
+<div class="row mt-4">
+    
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">group id</th>
+            <th scope="col">group title</th>
+            <th scope="col">group description</th>
+            
+            <th scope="col"></th>
+            <th scope="col"></th>
+            
+        </thead>
+        <tbody>
+          <tr (click)="onSelect(data)" *ngFor = "let data of user">
+            <th scope="row">{{data.UserGroupId}}</th>
+            
+            <td>{{data.UserGroupName}}</td>
+            <td>{{data.UserGroupDescription}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>

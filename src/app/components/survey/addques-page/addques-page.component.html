@@ -1,1 +1,37 @@
-<p>addques-page works!</p>
+<div class="py-5 ">
+    <div class="row ">
+      <div class="col-md-4 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card shadow-lg p-3 mb-5 bg-body " style="border-radius:25pt;">
+          <div class="card-body ">
+            
+            <h3 class="mb-0 display-4">add survey </h3>
+          </div>
+          <div class="card-body">
+            <form class="form" #adduserform = "ngForm" (ngSubmit)="enrolldatatosql()">
+              <div class="form-group">
+                <!-- <label >Username</label> -->
+                <input type="text" name="survey question" class="form-control rounded" placeholder="SurveyQuestion" [(ngModel)]="addques.SurveyQuestion" required>
+                <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">email is required</small><br> -->
+                
+              </div>
+              <div class="form-group">
+                <!-- <label>Password</label> -->
+                <input type="text" placeholder="correct answer" name="description" class="form-control "  [(ngModel)]="addques.CorrectAnswer" required>
+                <input type="text" placeholder="input type" name="input" class="form-control "  [(ngModel)]="addques.InputType" required>
+                <!-- <small class="text-danger d-none" [class.d-none]="pwd.valid || pwd.untouched">password is required</small> -->
+              </div><br>
+              <button  type="submit" class="btn btn-dark float-right">ADD</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

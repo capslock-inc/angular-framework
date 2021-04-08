@@ -19,10 +19,16 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.addusermodel = this.service.editModelData;
+    console.log(this.addusermodel)
   }
   enrolldatatosql(){
     
-    this.route.navigate(['./'])
+    
+    this.service.edituserdata(this.addusermodel).subscribe(
+      data => console.log(data),
+      err => console.log(err)
+    )
+    this.route.navigate(['/viewuser'])
 
   }
 

@@ -42,7 +42,11 @@ export class UserdetailsComponent implements OnInit {
     
   }
 delete(){
-
+ this.service.deleteuser(this.userdetail).subscribe(
+   data => console.log(data),
+   err => console.log(err)
+ )
+ this.router.navigate(['/viewuser'])
 }
 edit(){
   this.router.navigate(['/edituser'])

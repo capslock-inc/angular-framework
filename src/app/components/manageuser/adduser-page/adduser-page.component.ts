@@ -4,6 +4,8 @@ import { adduser } from 'src/app/models/addusermodel';
 import { UserService } from 'src/app/services/user.service';
 import { loginusermodel } from 'src/app/models/loginusermodel';
 import { Router } from '@angular/router';
+import { GroupService } from 'src/app/services/group.service';
+import { viewusergroup } from 'src/app/models/usergroupmodel';
 
 
 
@@ -18,8 +20,11 @@ export class AdduserPageComponent implements OnInit {
     null,null,null,true
     );
 
-  constructor(private service: UserService,private http: HttpClient, private route: Router) { }
+  grp:viewusergroup;
+  constructor(private service: UserService,private http: HttpClient, private route: Router,private grpservices: GroupService) { }
   ngOnInit(): void {
+    this.grp = this.grpservices.grpser
+    console.log(this.grp)
   }
 
   enrolldatatosql(){

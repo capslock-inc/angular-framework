@@ -12,4 +12,8 @@ export class AddcmspagePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  enrolldatatosql(){
+    
+  }
+
 }

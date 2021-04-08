@@ -6,7 +6,7 @@
         <!-- form card login -->
         <div class="card rounded-0">
           <div class="card-header">
-            <h3 class="mb-0">Register</h3>
+            <h3 class="mb-0">edit user</h3>
           </div>
           <div class="card-body">
             <form class="form" #adduserform='ngForm' (ngSubmit)="enrolldatatosql()" >
@@ -38,23 +38,23 @@
                 </div><br>
 
 
-                <label>Email</label>
-                <input class="form-control" type="email" name = "useremail" [(ngModel)] = "addusermodel.UserEmail" 
+                <!-- <label>Email</label>
+                <input  class="form-control" type="email" name = "useremail" [(ngModel)] = "addusermodel.UserEmail" 
                 #email = "ngModel" [class.is-invalid]="email.invalid && email.touched" required>
-                <!-- errormessage -->
+                 
                 <div *ngIf="email.errors && (email.valid || email.touched)">
                   <small class="text-danger" *ngIf = "email.errors.required">email is required </small>
-                </div><br>
+                </div><br> -->
 
 
-                <label>password</label>
+                <!-- <label>password</label>
                 <input class="form-control" type="text" pattern=".{8,}"  [(ngModel)] = "addusermodel.UserPassword" 
                 name = "password" [class.is-invalid]="pwd.invalid && pwd.touched" #pwd="ngModel"  required>
-                <!-- errormessage -->
+                
                 <div *ngIf="pwd.errors && (pwd.valid || pwd.touched)">
                   <small class="text-danger" *ngIf = "pwd.errors.required">password is required </small>
                   <small class="text-danger" *ngIf = "pwd.errors.pattern">password must be atleast eight character</small>
-                </div><br>
+                </div><br> -->
 
         
                 <label>Mobile Number</label>
@@ -113,25 +113,24 @@
                 </div><br>
 
 
-                <label>Profile Picture</label>
+                <!-- <label>Profile Picture</label>
                 <input class="form-control" type="file" name = "userphoto" [(ngModel)] = "addusermodel.UserUploadPhoto"
                 #profile = "ngModel" [class.is-invalid]="profile.invalid && profile.touched" required>
-                <!-- errormessage -->
+                 errormessage
                 <div *ngIf="profile.errors && (profile.valid || profile.touched)">
                   <small class="text-danger" *ngIf = "profile.errors.required">profile picture is required </small>
-                </div><br>
+                </div><br> -->
 
 
-                <label>KYC Document</label>
+                <!-- <label>KYC Document</label>
                 <input class="form-control"  type="file" name = "Userkyc" [(ngModel)] = "addusermodel.UserKycUpload"
                 #kyc = "ngModel" [class.is-invalid]="kyc.invalid && kyc.touched" required>
-                <!-- errormessage -->
-                <div *ngIf="kyc.errors && (kyc.valid || kyc.touched)">
-                  <small class="text-danger" *ngIf = "kyc.errors.required">kyc document is required </small>
-                </div><br>
-              
+                errormessage -->
+                <!-- <div *ngIf="kyc.errors && (kyc.valid || kyc.touched)">-->
+                  <!-- <small class="text-danger" *ngIf = "kyc.errors.required">kyc document is required </small> -->
+                <!-- </div><br>  -->
              
-              <button [disabled]="adduserform.form.invalid" type="submit"  class="btn btn-dark float-right">Register</button>
+              <button [disabled]="adduserform.form.invalid" type="submit"  class="btn btn-dark float-right">Edit</button>
             </form>
           </div>
           <!--/card-block-->
