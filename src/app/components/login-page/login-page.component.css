@@ -1,0 +1,131 @@
+.logindiv{
+    width: 20%;
+    height: 40%;
+    padding: 25px 10px;
+    background: rgba(0,0, 0, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: -15px -15px 100px rgba(0, 0, 0,1),
+     15px 15px 100px rgba(0, 0, 0,1),
+     -5px -5px 100px rgba(0, 0, 0,1),
+    5px 5px 100px rgba(0, 0, 0,1);
+    
+}
+h1{
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    margin-top: 5%;
+}
+form{
+    padding: 0 40px;
+    box-sizing: border-box; 
+
+}
+.inputext{
+    position: relative;
+    /* border-bottom:2px solid #000; */
+    margin: 40px 0;
+}
+.inputext input{
+    width: 100%;
+    padding: 1% 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    color: whit255;
+}
+
+.inputext label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: whitesmoke;
+    transform: translateY(-50%);
+    font-size: 18pt;
+    pointer-events: none;
+    font-weight: bold;
+    transition: .4s;
+}
+.inputext span::before{
+    content: '';
+    position:absolute;
+    top: 40px;
+    right:0;
+    width:0%;
+    height:2px;
+    background: white;
+    transition: 1.2s;
+}
+.inputext input:focus ~label,
+.inputext input:hover ~label,
+.inputext input:valid ~ label{
+ top:-5px;
+ color: white;
+ font-size: 14pt;
+ 
+}
+.inputext input:focus ~ span::before,
+.inputext input:hover ~ span::before,
+.inputext input:valid ~ span::before{
+ width: 100%;
+}
+
+.btn{
+    width: 100%;
+    padding: 15px 2px;
+    text-align: center;
+    margin: 10% 0%;
+    border-radius: 25px;
+    font-weight: bold;
+    border:1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+
+}
+.btn span{
+        background: white;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    
+}
+.btn:hover span{
+    width: 100%;
+}
+.btn:hover{
+    border: none;
+    color: black;
+}
+.fp{
+    text-align: center;
+    
+}
+.fp a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 120
+    
+}
+.fp a:hover{
+    color: white;
+    font-weight: bold;
+}

@@ -12,6 +12,10 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  loginpage(){
+    this.route.navigate(['/login'])
+  }
   
 
 }

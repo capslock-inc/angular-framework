@@ -1,0 +1,56 @@
+.layout{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(../assets/landingpage.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.navbars{
+    width: 100%;
+    margin: auto;
+    background-color:transparent;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    margin: 0 50px;
+    font-size: 30pt;
+    font-family: monospace;
+    font-weight: bold;
+    color: white;
+}
+.logo span{
+    color:wheat;
+    font-family: monospace;
+    
+}
+.navbars ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position:relative;
+}
+
+.navbars ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+.navbars ul li::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+
+}
+.navbars ul li:hover::after{
+    width: 100%;
+}
